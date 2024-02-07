@@ -8,7 +8,7 @@ nav{
     justify-content: space-around;
     padding: 10px;
     grid-area: menu;
-    background: blue;
+    background: #40A2E3;
     color: white;
     border: 1px solid black;
 }
@@ -24,32 +24,45 @@ nav h3{
     display: none;
 }
 section {
-    padding: 10px;
     grid-area: filtro;
-    background: gray;
+    background: #FFF6E9;
     color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    align-items: center;
+}
+section select{
+    padding-right: 50px;
+    border-radius: 5px;
+    
 }
 main{
     grid-area: seccion-principal;
     padding: 30px;
     gap: 30px;
     height: max-content;
+    background: #BBE2EC;
 }
 .galeria{
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
     width: fit-content;
+    
 }
 .productos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    justify-content: center;
+    background-color: white;
     border: 1px solid gray;
     padding: 10px;
+    box-shadow: 3px 5px 2px rgb(105, 101, 101);
+    height: fit-content;
+    justify-self: center;
 }
 .productos img {
     width: 80%;   
@@ -85,6 +98,7 @@ main{
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    padding-top: 10px;
 }
 .paginacion a{
     border: 1px solid cornflowerblue;
@@ -92,25 +106,60 @@ main{
     text-decoration: none;
     cursor:pointer;
     padding: 5px;
+    background: white;
 }
 .paginacion a:hover{
     opacity: 0.6;
 }
 footer{
     grid-area: pie-de-pagina;
-    background: red;
+    background: #0D9276;
     color: white;
-    padding: 10px;
+}
+footer p{
+    text-align: center;
 }
 .layout {
     display: grid;
     height: 100vh;
-    grid-template-rows: 1fr 1fr auto 1fr;
+    grid-template-rows: auto auto auto 1fr;
     grid-template-areas: 
     "menu"
     "filtro"
     "seccion-principal"
     "pie-de-pagina";
+}
+@media (min-width:576px) {
+    .layout{
+        grid-template-areas: 
+        "menu menu menu"
+        "filtro seccion-principal seccion-principal"
+        "filtro seccion-principal seccion-principal"
+        "pie-de-pagina pie-de-pagina pie-de-pagina"
+        ;
+        grid-template-columns: 20% auto;
+        grid-template-rows: auto auto 15%;
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        text-align: start;
+        gap: 20px;
+        align-items: center;
+    }
+    .menu a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        cursor:pointer;
+        font-size: 15px;
+        text-align: center;
+    }
+    .menu a:hover{
+        opacity: 0.6;
+    }
+    header{
+        display: none;
+    }
 }
 @media (min-width:992px) {
     .layout{
@@ -119,7 +168,7 @@ footer{
         "menu seccion-principal"
         "pie-de-pagina seccion-principal";
         grid-template-columns: 10% auto;
-        grid-template-rows: 10% auto 10%;
+        grid-template-rows: auto auto 15%;
     }
     nav{
         display: flex;
@@ -153,5 +202,11 @@ footer{
     }
     .galeria{
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    section{
+        padding-bottom: 15px;
+    }
+    section select{
+        padding-right: 70%;
     }
 }
