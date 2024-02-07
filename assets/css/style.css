@@ -104,7 +104,7 @@ footer{
 }
 .layout {
     display: grid;
-    height: fit-content;
+    height: 100vh;
     grid-template-rows: 1fr 1fr auto 1fr;
     grid-template-areas: 
     "menu"
