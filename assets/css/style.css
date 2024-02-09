@@ -55,13 +55,12 @@ main{
 .productos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background-color: white;
     border: 1px solid gray;
     padding: 10px;
     box-shadow: 3px 5px 2px rgb(105, 101, 101);
-    height: fit-content;
     justify-self: center;
 }
 .productos img {
@@ -81,7 +80,7 @@ main{
     background-color: darkslateblue;
     border: 1px solid black;
     width: fit-content;
-    height: 10%;
+    height: fit-content;
     align-content: center;
     justify-content: center;
 }
@@ -159,6 +158,9 @@ footer p{
     }
     header{
         display: none;
+    }
+    .galeria{
+        grid-template-columns: 1fr 1fr;
     }
 }
 @media (min-width:992px) {
